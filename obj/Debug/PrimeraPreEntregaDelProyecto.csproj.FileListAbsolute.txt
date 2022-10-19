@@ -1,0 +1,8 @@
+C:\Users\michelle.salinas\Desktop\PrimeraPreEntregaDelProyecto\bin\Debug\PrimeraPreEntregaDelProyecto.exe.config
+C:\Users\michelle.salinas\Desktop\PrimeraPreEntregaDelProyecto\bin\Debug\PrimeraPreEntregaDelProyecto.exe
+C:\Users\michelle.salinas\Desktop\PrimeraPreEntregaDelProyecto\bin\Debug\PrimeraPreEntregaDelProyecto.pdb
+C:\Users\michelle.salinas\Desktop\PrimeraPreEntregaDelProyecto\obj\Debug\PrimeraPreEntregaDelProyecto.csproj.AssemblyReference.cache
+C:\Users\michelle.salinas\Desktop\PrimeraPreEntregaDelProyecto\obj\Debug\PrimeraPreEntregaDelProyecto.csproj.SuggestedBindingRedirects.cache
+C:\Users\michelle.salinas\Desktop\PrimeraPreEntregaDelProyecto\obj\Debug\PrimeraPreEntregaDelProyecto.csproj.CoreCompileInputs.cache
+C:\Users\michelle.salinas\Desktop\PrimeraPreEntregaDelProyecto\obj\Debug\PrimeraPreEntregaDelProyecto.exe
+C:\Users\michelle.salinas\Desktop\PrimeraPreEntregaDelProyecto\obj\Debug\PrimeraPreEntregaDelProyecto.pdb
