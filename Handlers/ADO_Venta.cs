@@ -39,14 +39,6 @@ namespace PrimeraPreEntregaDelProyecto.Handlers
                     venta.IdUsuario = Convert.ToInt32(reader.GetValue(2));
                     Ventas.Add(venta);
                 }
-
-                foreach (var venta in Ventas)
-                {
-                    Console.WriteLine("Id = " + venta.Id);
-                    Console.WriteLine("Stock = " + venta.Comentarios);
-                    Console.WriteLine("IdProducto = " + venta.IdUsuario);
-                    Console.WriteLine("\n ---------------- \n");
-                }
                 reader.Close();
                 connection.Close();
             }

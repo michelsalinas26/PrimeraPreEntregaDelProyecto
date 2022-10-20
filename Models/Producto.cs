@@ -10,12 +10,12 @@ namespace PrimeraPreEntregaDelProyecto.Models
     {
         public int Id { get; set; }
         public string Descripciones { get; set; }
-        public int Costo { get; set; }
-        public int PrecioVenta { get; set; }
+        public double Costo { get; set; }
+        public double PrecioVenta { get; set; }
         public int Stock { get; set; }
         public int IdUsuario { get; set; }
 
-        public Producto(int id, string descripciones, int costo, int precioVenta, int stock, int idUsuario)
+        public Producto(int id, string descripciones, double costo, double precioVenta, int stock, int idUsuario)
         {
             Id = id;
             Descripciones = descripciones;

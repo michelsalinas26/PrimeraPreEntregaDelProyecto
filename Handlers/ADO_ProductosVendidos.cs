@@ -10,9 +10,9 @@ namespace PrimeraPreEntregaDelProyecto.Handlers
 {
     public class ADO_ProductosVendidos
     {
-        public List<Producto> ProductosVendidosPorUsuario(string NombreUsuario)
+        public List<ProductoVendido> ProductosVendidosPorUsuario(int Iduser)
         {
-            List<Producto> ListaProductosVendidos = new List<Producto>();
+            List<ProductoVendido> ListaProductosVendidos = new List<ProductoVendido>();
 
             SqlConnectionStringBuilder conecctionbuilder = new SqlConnectionStringBuilder();
             conecctionbuilder.DataSource = "MARCOSLEAL1\\MSSQLSERVER01";
@@ -26,32 +26,18 @@ namespace PrimeraPreEntregaDelProyecto.Handlers
                 cmd.Connection = connection;
                 connection.Open();
 
-                cmd.CommandText = "SELECT pr.* FROM Producto pr INNER JOIN ProductoVendido pv ON pr.Id = pv.IdProducto INNER JOIN Venta vnt ON vnt.Id = pv.IdVenta INNER JOIN Usuario us ON Us.Id = vnt.IdUsuario WHERE Us.NombreUsuario = @NombreUsuario;";
-                cmd.Parameters.Add(new SqlParameter("@NombreUsuario", NombreUsuario));
+                cmd.CommandText = "select pv.* from ProductoVendido as pv join Producto on pv.IdProducto = Producto.Id where Producto.IdUsuario = @iduser;";
+                cmd.Parameters.Add(new SqlParameter("@iduser", Iduser));
                 var reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    var produc = new Producto();
+                    var produc = new ProductoVendido();
                     produc.Id = Convert.ToInt32(reader.GetValue(0));
-                    produc.Descripciones = reader.GetValue(1).ToString();
-                    produc.Costo = Convert.ToInt32(reader.GetValue(2));
-                    produc.PrecioVenta = Convert.ToInt32(reader.GetValue(3));
-                    produc.Stock = Convert.ToInt32(reader.GetValue(4));
-                    produc.IdUsuario = Convert.ToInt32(reader.GetValue(5));
+                    produc.Stock = Convert.ToInt32(reader.GetValue(1));
+                    produc.IdProducto = Convert.ToInt32(reader.GetValue(2));
+                    produc.IdVenta = Convert.ToInt32(reader.GetValue(3));
                     ListaProductosVendidos.Add(produc);
-                }
-
-                foreach (var produc in ListaProductosVendidos)
-                {
-                    Console.WriteLine("Productos vendidos por el usuario");
-                    Console.WriteLine("Id = " + produc.Id);
-                    Console.WriteLine("Stock = " + produc.Descripciones);
-                    Console.WriteLine("IdProducto = " + produc.Costo);
-                    Console.WriteLine("IdVenta = " + produc.PrecioVenta);
-                    Console.WriteLine("IdProducto = " + produc.Stock);
-                    Console.WriteLine("IdVenta = " + produc.IdUsuario);
-                    Console.WriteLine("\n ---------------- \n");
                 }
                 reader.Close();
                 connection.Close();

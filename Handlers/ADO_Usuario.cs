@@ -39,21 +39,6 @@ namespace PrimeraPreEntregaDelProyecto.Handlers
                     user.Contraseña = reader.GetValue(4).ToString();
                     user.Mail = reader.GetValue(5).ToString();
                 }
-
-                Console.WriteLine("---- USUARIO ----");
-                if (user.NombreUsuario == NombreUsuario)
-                {
-                    Console.WriteLine("NombreUsuario = " + user.NombreUsuario);
-                    Console.WriteLine("Id = " + user.Id);
-                    Console.WriteLine("Nombre = " + user.Nombre);
-                    Console.WriteLine("Mail = " + user.Mail);
-                    Console.WriteLine("Apellido = " + user.Apellido);
-                    Console.WriteLine("Contraseña = " + user.Contraseña);
-                }
-                else
-                {
-                    Console.WriteLine("El nombre del usuario es incorrecto");
-                }
                 reader.Close();
                 connection.Close();
             }
@@ -92,26 +77,7 @@ namespace PrimeraPreEntregaDelProyecto.Handlers
                         user.Contraseña = reader.GetValue(4).ToString();
                         user.Mail = reader.GetValue(5).ToString();
                     }
-                    Console.WriteLine("---- USUARIO ----");
-                    Console.WriteLine("NombreUsuario = " + user.NombreUsuario);
-                    Console.WriteLine("Id = " + user.Id);
-                    Console.WriteLine("Nombre = " + user.Nombre);
-                    Console.WriteLine("Mail = " + user.Mail);
-                    Console.WriteLine("Apellido = " + user.Apellido);
-                    Console.WriteLine("Contraseña = " + user.Contraseña);
                 }
-                else
-                {
-                    Usuario vacio = new Usuario();
-                    Console.WriteLine("El nombre del usuario es incorrecto");
-                    Console.WriteLine("NombreUsuario = " + vacio.NombreUsuario);
-                    Console.WriteLine("Id = " + vacio.Id);
-                    Console.WriteLine("Nombre = " + vacio.Nombre);
-                    Console.WriteLine("Mail = " + vacio.Mail);
-                    Console.WriteLine("Apellido = " + vacio.Apellido);
-                    Console.WriteLine("Contraseña = " + vacio.Contraseña);
-                }
-
                 reader.Close();
                 connection.Close();
             }
